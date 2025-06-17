@@ -1,0 +1,105 @@
+QPushButton {
+    /* 基本样式 */
+    background-color: #4CAF50;
+    border: 2px solid #4CAF50;
+    color: white;
+    padding: 8px 16px;      /* 保留内边距，但不要设置最小宽高 */
+    border-radius: 4px;
+    /*font-size: 14px;*/
+    font-weight: bold;
+}
+
+QPushButton#btnQuit {
+    /* 基本样式 */
+    background-color: #f44336;        /* 红色 */
+    border: 2px solid #f44336;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+QPushButton#btnLogin {
+    /* 基本样式 */
+    background-color: #4CAF50;        /* 背景色 */
+    border: 2px solid #4CAF50;        /* 边框 */
+    color: white;                     /* 文字颜色 */
+    padding: 8px 16px;                /* 内边距 */
+    border-radius: 4px;               /* 圆角半径 */
+    /* 阴影效果 */
+    /* 注意：Qt 的 QSS 不支持 box-shadow，需要使用 QGraphicsDropShadowEffect */
+}
+
+/* 悬停状态 */
+QPushButton:hover {
+    background-color: #45a049;
+    border-color: #45a049;
+}
+
+/* 按下状态 */
+QPushButton:pressed {
+    background-color: #3e8e41;
+    border-color: #3e8e41;
+    padding-top: 9px;
+    padding-bottom: 7px;
+}
+
+/* 禁用状态 */
+QPushButton:disabled {
+    background-color: #cccccc;
+    border-color: #999999;
+    color: #666666;
+}
+
+QPushButton#btnRegister {
+    /* 基本样式 */
+    background-color: #4CAF50;        /* 背景色 */
+    border: 2px solid #4CAF50;        /* 边框 */
+    color: white;                     /* 文字颜色 */
+    padding: 8px 16px;                /* 内边距 */
+    border-radius: 4px;               /* 圆角半径 */
+
+    /* 阴影效果 */
+    /* 注意：Qt 的 QSS 不支持 box-shadow，需要使用 QGraphicsDropShadowEffect */
+}
+
+QLabel {
+    color: #333333;                 /* 文字颜色 */
+    /*font-size: 18px;                /* 字体大小 */
+    /*font-weight: bold;              /* 字体粗细 */
+    /*font-family: "Microsoft YaHei"; /* 字体家族 */
+    /*padding: 5px 10px;             /* 内边距 */
+    background-color: #f8f8f8;      /* 背景色 */
+    border-radius: 4px;            /* 圆角 */
+    border: 1px solid #dddddd;      /* 边框 */
+}
+
+
+/* 基础输入框样式 */
+QLineEdit {
+    border: 1px solid #ccc;          /* 边框 */
+    border-radius: 4px;              /* 圆角 */
+    padding: 5px 10px;               /* 内边距 */
+    /*font-size: 14px;                 /* 字体大小 */
+    background-color: white;         /* 背景色 */
+    color: #333;                     /* 文字颜色 */
+    selection-background-color: #4CAF50; /* 选中文本背景色 */
+    selection-color: white;          /* 选中文本颜色 */
+}
+
+/* 基础输入框样式 */
+QTextEdit {
+    border: 1px solid #ccc;          /* 边框 */
+    border-radius: 4px;              /* 圆角 */
+    padding: 5px 10px;               /* 内边距 */
+    font-size: 14px;                 /* 字体大小 */
+    background-color: white;         /* 背景色 */
+    color: #333;                     /* 文字颜色 */
+    selection-background-color: #4CAF50; /* 选中文本背景色 */
+    selection-color: white;          /* 选中文本颜色 */
+}
+
+/* 获得焦点时的样式 */
+QLineEdit:focus {
+    border: 1px solid #4CAF50;       /* 焦点边框颜色 */
+    background-color: #f8fff8;       /* 焦点背景色 */
+}

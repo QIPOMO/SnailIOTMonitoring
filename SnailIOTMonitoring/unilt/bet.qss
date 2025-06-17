@@ -1,0 +1,189 @@
+/* ===== 基础按钮样式 ===== */
+QPushButton#btnmessage {
+    /* 基础布局 */
+    min-width: 100px;
+    min-height: 40px;
+    padding: 8px 24px;
+    margin: 4px;
+    border: none;
+    border-radius: 8px;
+    
+    /* 字体样式 */
+    font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+    font-size: 12pt;
+    font-weight: 600;
+    
+    /* 颜色 */
+    color: #FFFFFF;
+    background-color: #4e73df;
+    
+}
+
+/* 鼠标悬停状态 */
+QPushButton#btnmessage:hover {
+    background-color: #6a89ea;
+}
+
+/* 按下状态 */
+QPushButton#btnmessage:pressed {
+    background-color: #3956c0;
+}
+
+/* 禁用状态 */
+QPushButton#btnmessage:disabled {
+    background-color: #e0e0e0;
+    color: #9e9e9e;
+}
+
+
+/* ===== 基础按钮样式 ===== */
+QPushButton#btnnext {
+    /* 基础布局 */
+    min-width: 100px;
+    min-height: 40px;
+    padding: 8px 24px;
+    margin: 4px;
+    border: none;
+    border-radius: 8px;
+
+    /* 字体样式 */
+    font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+    font-size: 12pt;
+    font-weight: 600;
+
+    /* 颜色 */
+    color: #FFFFFF;
+    background-color: #4e73df;
+
+}
+
+/* 鼠标悬停状态 */
+QPushButton#btnnext:hover {
+    background-color: #6a89ea;
+}
+
+/* 按下状态 */
+QPushButton#btnnext:pressed {
+    background-color: #3956c0;
+}
+
+/* 禁用状态 */
+QPushButton#btnnext:disabled {
+    background-color: #e0e0e0;
+    color: #9e9e9e;
+}
+
+
+/* ===== 基础按钮样式 ===== */
+QPushButton#btnlogin {
+    /* 基础布局 */
+    min-width: 100px;
+    min-height: 40px;
+    padding: 8px 24px;
+    margin: 4px;
+    border: none;
+    border-radius: 8px;
+
+    /* 字体样式 */
+    font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+    font-size: 12pt;
+    font-weight: 600;
+
+    /* 颜色 */
+    color: #FFFFFF;
+    background-color: #4e73df;
+
+}
+
+/* 鼠标悬停状态 */
+QPushButton#btnlogin:hover {
+    background-color: #6a89ea;
+}
+
+/* 按下状态 */
+QPushButton#btnlogin:pressed {
+    background-color: #3956c0;
+}
+
+/* 禁用状态 */
+QPushButton#btnlogin:disabled {
+    background-color: #e0e0e0;
+    color: #9e9e9e;
+}
+
+/* ===== 基础按钮样式 ===== */
+QPushButton#btnadd {
+    /* 基础布局 */
+    min-width: 100px;
+    min-height: 40px;
+    padding: 8px 24px;
+    margin: 4px;
+    border: none;
+    border-radius: 8px;
+
+    /* 字体样式 */
+    font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+    font-size: 12pt;
+    font-weight: 600;
+
+    /* 颜色 */
+    color: #FFFFFF;
+    background-color: #4e73df;
+
+}
+
+/* 鼠标悬停状态 */
+QPushButton#btnadd:hover {
+    background-color: #6a89ea;
+}
+
+/* 按下状态 */
+QPushButton#btnadd:pressed {
+    background-color: #3956c0;
+}
+
+/* 禁用状态 */
+QPushButton#btnadd:disabled {
+    background-color: #e0e0e0;
+    color: #9e9e9e;
+}
+
+
+/* ===== 基础按钮样式 ===== */
+QPushButton#btnnext {
+    /* 基础布局 */
+    min-width: 100px;
+    min-height: 40px;
+    padding: 8px 24px;
+    margin: 4px;
+    border: none;
+    border-radius: 8px;
+
+    /* 字体样式 */
+    font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+    font-size: 12pt;
+    font-weight: 600;
+
+    /* 颜色 */
+    color: #FFFFFF;
+    background-color: #4e73df;
+
+}
+
+/* 鼠标悬停状态 */
+QPushButton#btnnext:hover {
+    background-color: #6a89ea;
+}
+
+/* 按下状态 */
+QPushButton#btnnext:pressed {
+    background-color: #3956c0;
+}
+
+/* 禁用状态 */
+QPushButton#btnnext:disabled {
+    background-color: #e0e0e0;
+    color: #9e9e9e;
+}
+
+
