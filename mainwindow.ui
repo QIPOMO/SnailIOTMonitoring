@@ -16,7 +16,17 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <layout class="QVBoxLayout" name="centerLayout"/>
+     <layout class="QVBoxLayout" name="verticalLayout_3" stretch="10,100,10">
+      <item>
+       <layout class="QVBoxLayout" name="TitlebarLayout"/>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="centerbarLayout"/>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="StatusbarLayout"/>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>

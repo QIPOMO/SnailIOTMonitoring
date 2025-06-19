@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>xxxxxxx.png</file>
+        <file>123.png</file>
+        <file>unilt/beet.css</file>
+        <file>unilt/img.css</file>
+    </qresource>
+</RCC>

@@ -3,8 +3,7 @@
 
 Login::Login(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::Login),
-    m_dbMessage(new DatabaseMessage(this)){
+    ui(new Ui::Login){
     ui->setupUi(this);
 
     ui->LoginName->setPlaceholderText("用户名");
@@ -14,32 +13,40 @@ Login::Login(QWidget *parent) :
     ui->LoginPassword->setAlignment(Qt::AlignCenter);
     //ui->LoginPassword->setEchoMode(QLineEdit::Password);
 
-    //Comment::loadStyleSheep("D:/qt/CenterWidget/uilte/bet.qss");
-
     connect(ui->btnLogin,&QPushButton::clicked,this,&Login::LoginSuccess);
     connect(ui->btnNewUser,&QPushButton::clicked,this,&Login::newUser);
-
+    connect(ui->btnForgot,&QPushButton::clicked,this,&Login::RestPassword);
 }
 
 void Login::LoginSuccess() {
-    DatabaseMessage user;
+    //获取单例实例
+    DatabaseMessage* user = DatabaseMessage::instance();
 
     QString name = ui->LoginName->text();
     QString password = ui->LoginPassword->text();
-    if(!user.openDatabase()){
+
+    if(!user->openDatabase()){
+        QMessageBox::warning(this, "错误", "无法打开数据库");
         return;
     }
-    if (user.authenticateUser(name, password)) {
-        if(user.getUserByName(name).role == "admin"){
+
+    if (user->authenticateUser(name, password)) {
+        DatabaseMessage::Users userInfo = user->getUserByName(name);
+        if(userInfo.role == "admin"){
             emit display(2);//管理员界面
         }
-        if(user.getUserByName(name).role == "user"){
+        if(userInfo.role == "user"){
             emit display(3);//普通用户界面
+            emit disName(name);//把登陆时的名字传给user界面
         }
     }
 
     ui->LoginName->clear();
     ui->LoginPassword->clear();
+}
+
+void Login::RestPassword() {
+     emit display(4);
 }
 
 void Login::newUser(){
@@ -48,5 +55,4 @@ void Login::newUser(){
 
 Login::~Login() {
     delete ui;
-
 }

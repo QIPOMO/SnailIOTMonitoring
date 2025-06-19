@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>adminDeviceMessage</class>
+ <widget class="QWidget" name="adminDeviceMessage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>685</width>
+    <height>440</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout_2" stretch="100">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="20,70">
+       <item>
+        <layout class="QHBoxLayout" name="DeviceMessage"/>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="DeviceLayout"/>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

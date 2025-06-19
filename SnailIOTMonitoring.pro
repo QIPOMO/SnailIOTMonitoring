@@ -16,30 +16,116 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    adddevice.cpp \
     admin.cpp \
+    adminchangepassword.cpp \
+    admindataanalysis.cpp \
+    admindatamessage.cpp \
+    admindeleteuser.cpp \
+    admindeviceerror.cpp \
+    admindevicemessage.cpp \
+    admingetuserall.cpp \
+    adminlayout.cpp \
+    adminloginmessage.cpp \
+    adminmessage.cpp \
+    admintitle.cpp \
+    basecenter.cpp \
+    centerbar.cpp \
+    changeuser.cpp \
+    databasedevice.cpp \
     databasemessage.cpp \
+    devicelayout.cpp \
+    devicemanageruser.cpp \
+    devicemessage.cpp \
+    forgotpassword.cpp \
+    getuserall.cpp \
     login.cpp \
     main.cpp \
-    mainwindow.cpp \
+    mainwindows.cpp \
     newuser.cpp \
-    user.cpp
+    seeiddevice.cpp \
+    statusbar.cpp \
+    titlebar.cpp \
+    user.cpp \
+    userlayout.cpp \
+    usermessage.cpp \
+    usertitle.cpp
 
 HEADERS += \
+    adddevice.h \
     admin.h \
+    adminchangepassword.h \
+    admindataanalysis.h \
+    admindatamessage.h \
+    admindeleteuser.h \
+    admindeviceerror.h \
+    admindevicemessage.h \
+    admingetuserall.h \
+    adminlayout.h \
+    adminloginmessage.h \
+    adminmessage.h \
+    admintitle.h \
+    basecenter.h \
+    centerbar.h \
+    changeuser.h \
+    comment.h \
+    databasedevice.h \
     databasemessage.h \
+    devicelayout.h \
+    devicemanageruser.h \
+    devicemessage.h \
+    forgotpassword.h \
+    getuserall.h \
     login.h \
-    mainwindow.h \
+    mainwindows.h \
     newuser.h \
-    user.h
+    seeiddevice.h \
+    statusbar.h \
+    titlebar.h \
+    user.h \
+    userlayout.h \
+    usermessage.h \
+    usertitle.h
 
 FORMS += \
+    adddevice.ui \
     admin.ui \
+    adminchangepassword.ui \
+    admindataanalysis.ui \
+    admindatamessage.ui \
+    admindeleteuser.ui \
+    admindeviceerror.ui \
+    admindevicemessage.ui \
+    admingetuserall.ui \
+    adminlayout.ui \
+    adminloginmessage.ui \
+    adminmessage.ui \
+    admintitle.ui \
+    centerbar.ui \
+    changeuser.ui \
+    devicelayout.ui \
+    devicemanageruser.ui \
+    devicemessage.ui \
+    forgotpassword.ui \
+    getuserall.ui \
     login.ui \
-    mainwindow.ui \
+    mainwindows.ui \
     newuser.ui \
-    user.ui
+    seeiddevice.ui \
+    statusbar.ui \
+    titlebar.ui \
+    user.ui \
+    userlayout.ui \
+    usermessage.ui \
+    usertitle.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    unilt/img.css
+
+RESOURCES += \
+    pros.qrc
