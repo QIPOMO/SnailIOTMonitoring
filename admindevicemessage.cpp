@@ -12,11 +12,10 @@ adminDeviceMessage::adminDeviceMessage(QWidget *parent) :
     ui->DeviceLayout->addWidget(m_pDeviceLayout);
 
     connect(m_pDeviceMessage,&DeviceMessage::display,m_pDeviceLayout,&DeviceLayout::display);
-
-
+    connect(m_pDeviceMessage,&DeviceMessage::Device,m_pDeviceLayout,&DeviceLayout::Device);
 }
 
-adminDeviceMessage::~adminDeviceMessage() {
+adminDeviceMessage::~adminDeviceMessage()
+{
     delete ui;
-
 }

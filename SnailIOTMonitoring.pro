@@ -1,4 +1,4 @@
-QT       += core gui sql
+QT       += core gui sql serialport charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -21,6 +21,7 @@ SOURCES += \
     adminchangepassword.cpp \
     admindataanalysis.cpp \
     admindatamessage.cpp \
+    admindeletedevice.cpp \
     admindeleteuser.cpp \
     admindeviceerror.cpp \
     admindevicemessage.cpp \
@@ -34,6 +35,7 @@ SOURCES += \
     changeuser.cpp \
     databasedevice.cpp \
     databasemessage.cpp \
+    databasestm.cpp \
     devicelayout.cpp \
     devicemanageruser.cpp \
     devicemessage.cpp \
@@ -43,7 +45,7 @@ SOURCES += \
     main.cpp \
     mainwindows.cpp \
     newuser.cpp \
-    seeiddevice.cpp \
+    serial.cpp \
     statusbar.cpp \
     titlebar.cpp \
     user.cpp \
@@ -57,6 +59,7 @@ HEADERS += \
     adminchangepassword.h \
     admindataanalysis.h \
     admindatamessage.h \
+    admindeletedevice.h \
     admindeleteuser.h \
     admindeviceerror.h \
     admindevicemessage.h \
@@ -71,6 +74,7 @@ HEADERS += \
     comment.h \
     databasedevice.h \
     databasemessage.h \
+    databasestm.h \
     devicelayout.h \
     devicemanageruser.h \
     devicemessage.h \
@@ -79,7 +83,7 @@ HEADERS += \
     login.h \
     mainwindows.h \
     newuser.h \
-    seeiddevice.h \
+    serial.h \
     statusbar.h \
     titlebar.h \
     user.h \
@@ -93,6 +97,7 @@ FORMS += \
     adminchangepassword.ui \
     admindataanalysis.ui \
     admindatamessage.ui \
+    admindeletedevice.ui \
     admindeleteuser.ui \
     admindeviceerror.ui \
     admindevicemessage.ui \
@@ -111,7 +116,6 @@ FORMS += \
     login.ui \
     mainwindows.ui \
     newuser.ui \
-    seeiddevice.ui \
     statusbar.ui \
     titlebar.ui \
     user.ui \

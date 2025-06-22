@@ -32,10 +32,14 @@ MainWindows::MainWindows(QWidget *parent) :
             this->showMaximized();
         }
     });
+    connect(this,&MainWindows::getSerial,m_pCenterbar,&Centerbar::getSerial);
 
 }
 
-MainWindows::~MainWindows()
-{
+void MainWindows::handleSerialError(const QString &error) {
+    qDebug()<<"error:"<<error;
+}
+
+MainWindows::~MainWindows() {
     delete ui;
 }

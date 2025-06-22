@@ -2,7 +2,6 @@
 #define ADMINCHANGEPASSWORD_H
 
 #include <QWidget>
-#include <QMessageBox>
 #include "databasemessage.h"
 
 namespace Ui {
@@ -22,6 +21,7 @@ public slots:
 
 private:
     Ui::adminChangePassword *ui;
+    DatabaseMessage *m_dbMessage;
 
 };
 

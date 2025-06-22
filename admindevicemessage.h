@@ -21,8 +21,6 @@ private:
     Ui::adminDeviceMessage *ui;
     DeviceMessage *m_pDeviceMessage;
     DeviceLayout *m_pDeviceLayout;
-
-
 };
 
 #endif // ADMINDEVICEMESSAGE_H

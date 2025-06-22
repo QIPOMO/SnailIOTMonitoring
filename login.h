@@ -6,7 +6,6 @@
 #include "comment.h"
 #include <QLineEdit>
 #include <QSettings>
-#include <QMessageBox>
 
 namespace Ui {
 class Login;
@@ -28,9 +27,12 @@ public slots:
 signals:
     void display(int);
     void disName(const  QString &);
+
+
 private:
     Ui::Login *ui;
-    //DatabaseMessage *m_dbMessage;
+    DatabaseMessage *m_dbMessage;
+
 };
 
 #endif // LOGIN_H

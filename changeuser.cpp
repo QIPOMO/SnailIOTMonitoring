@@ -3,7 +3,8 @@
 
 changeUser::changeUser(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::changeUser){
+    ui(new Ui::changeUser),
+    m_dbMessage(new DatabaseMessage(this)){
     ui->setupUi(this);
 
     ui->Oldpassword->setPlaceholderText("旧密码");
@@ -21,86 +22,75 @@ changeUser::changeUser(QWidget *parent) :
 
 void changeUser::onGetUserall(const QString &name) {
     connect(ui->btnChange, &QPushButton::clicked, this, [=]() {
-        // 获取数据库单例
-        DatabaseMessage* user = DatabaseMessage::instance();
 
-        // 获取输入并去除两端空格
+        DatabaseMessage user;
         QString oldpassword = ui->Oldpassword->text();
-        QString newEmail = ui->NewEmail->text().trimmed();
-        QString newPhone = ui->NewPhone->text().trimmed();
-        QString newPassword = ui->Newpassword->text();
 
-        // 1. 检查数据库连接
-        if (!user->openDatabase()) {
+        // 1. 先检查数据库连接
+        if (!user.openDatabase()) {
             QMessageBox::warning(this, "错误", "数据库打开失败");
             return;
         }
 
-        try {
-            // 2. 验证旧密码是否正确
-            if (!user->authenticateUser(name, oldpassword)) {
-                QMessageBox::warning(this, "错误", "旧密码不正确");
-                return;
-            }
-
-            // 3. 获取当前用户信息
-            DatabaseMessage::Users currentUser = user->getUserByName(name);
-            if (currentUser.user_id == 0) {
-                QMessageBox::warning(this, "错误", "用户不存在");
-                return;
-            }
-
-            // 4. 确定要更新的值（如果输入框为空则保持原值）
-            if (newEmail.isEmpty()) newEmail = currentUser.email;
-            if (newPhone.isEmpty()) newPhone = currentUser.phone;
-
-            // 5. 执行更新（只更新有变化的字段）
-            bool success = true;
-            QStringList failedUpdates;
-
-            // 更新邮箱（如果变化了）
-            if (newEmail != currentUser.email) {
-                if (!user->updateUserEmail(name, newEmail)) {
-                    success = false;
-                    failedUpdates << "邮箱";
-                }
-            }
-
-            // 更新电话（如果变化了）
-            if (newPhone != currentUser.phone) {
-                if (!user->updateUserphone(name, newPhone)) {
-                    success = false;
-                    failedUpdates << "电话";
-                }
-            }
-
-            // 更新密码（只有在新密码不为空时才更新）
-            if (!newPassword.isEmpty()) {
-                if (!user->updateUserPassword(currentUser.user_id, newPassword)) {
-                    success = false;
-                    failedUpdates << "密码";
-                }
-            }
-
-            // 6. 处理结果
-            if (success) {
-                QMessageBox::information(this, "成功", "修改成功");
-                // 清空输入框
-                ui->NewEmail->clear();
-                ui->NewPhone->clear();
-                ui->Newpassword->clear();
-                ui->Oldpassword->clear();
-            } else {
-                QMessageBox::warning(this, "部分更新失败",
-                    QString("以下信息更新失败:\n%1").arg(failedUpdates.join("\n")));
-            }
-        } catch (const std::exception& e) {
-            QMessageBox::critical(this, "异常错误", QString("发生异常: %1").arg(e.what()));
-        } catch (...) {
-            QMessageBox::critical(this, "未知错误", "发生未知异常");
+        // 2. 验证旧密码是否正确
+        if (!user.authenticateUser(name, oldpassword)) {
+            QMessageBox::warning(this, "错误", "旧密码不正确");
+            user.closeDatabase();
+            return;
         }
+
+        // 3. 获取当前用户信息
+
+        if (user.getUserByName(name).user_id == 0) {
+            QMessageBox::warning(this, "错误", "用户不存在");
+            user.closeDatabase();
+            return;
+        }
+
+        // 4. 确定要更新的值（如果输入框为空则保持原值）
+        QString newEmail = ui->NewEmail->text().isEmpty() ? user.getUserByName(name).email : ui->NewEmail->text();
+        QString newPhone = ui->NewPhone->text().isEmpty() ? user.getUserByName(name).phone : ui->NewPhone->text();
+
+        // 5. 执行更新（只更新有变化的字段）
+        bool success = true;
+
+        // 更新邮箱（如果变化了）
+        if (newEmail != user.getUserByName(name).email) {
+            if (!user.updateUserEmail(name, newEmail)) {
+                success = false;
+            }
+        }
+
+        // 更新电话（如果变化了）
+        if (newPhone != user.getUserByName(name).phone) {
+            if (!user.updateUserphone(name, newPhone)) {
+                success = false;
+            }
+        }
+
+        // 更新密码（只有在新密码不为空时才更新）
+        if (!ui->Newpassword->text().isEmpty()) {
+            if (!user.updateUserPassword(user.getUserByName(name).user_id, ui->Newpassword->text())) {
+                success = false;
+            }
+        }
+
+        // 6. 处理结果
+        if (success) {
+            QMessageBox::information(this, "成功", "修改成功");
+            // 清空输入框
+            ui->NewEmail->clear();
+            ui->NewPhone->clear();
+            ui->Newpassword->clear();
+            ui->Oldpassword->clear();
+        } else {
+            QMessageBox::warning(this, "错误", "部分更新失败");
+        }
+
+        user.closeDatabase();
     });
 }
+
 
 
 //void changeUser::onGetUserall(const QString &name) {

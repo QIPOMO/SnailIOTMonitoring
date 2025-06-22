@@ -25,6 +25,7 @@ public:
     ~AdminLayout();
 signals:
     void display(int);
+    void getSerial(const QByteArray &data);
 
 private:
     Ui::AdminLayout *ui;

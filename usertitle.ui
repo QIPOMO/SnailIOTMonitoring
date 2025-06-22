@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>adminDataAnalysis</class>
- <widget class="QWidget" name="adminDataAnalysis">
+ <class>UserTitle</class>
+ <widget class="QWidget" name="UserTitle">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>643</width>
-    <height>431</height>
+    <width>674</width>
+    <height>434</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,19 @@
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="text">
-      <string>数据分析</string>
+      <string>欢迎普通用户</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </item>

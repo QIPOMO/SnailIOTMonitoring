@@ -5,6 +5,7 @@
 #include "databasedevice.h"
 #include <QDateTime>
 #include <QMessageBox>
+#include <QDateTime>
 
 namespace Ui {
 class AddDevice;
@@ -23,6 +24,7 @@ public slots:
 
 private:
     Ui::AddDevice *ui;
+    DatabaseDevice *dbDevice;
 
 };
 

@@ -22,6 +22,12 @@ public:
     explicit MainWindows(QWidget *parent = nullptr);
     ~MainWindows();
 
+public slots:
+    void handleSerialError(const QString &error);   // 处理错误的槽
+
+signals:
+    void getSerial(const QByteArray &data);
+
 private:
     Ui::MainWindows *ui;
     Login *m_pLogin;

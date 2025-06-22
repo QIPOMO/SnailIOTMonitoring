@@ -20,6 +20,8 @@ class Centerbar : public QWidget
 public:
     explicit Centerbar(QWidget *parent = nullptr);
     ~Centerbar();
+signals:
+    void getSerial(const QByteArray &data);
 
 private:
     Ui::Centerbar *ui;

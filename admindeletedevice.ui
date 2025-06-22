@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>adminChangePassword</class>
- <widget class="QWidget" name="adminChangePassword">
+ <class>adminDeleteDevice</class>
+ <widget class="QWidget" name="adminDeleteDevice">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>613</width>
-    <height>417</height>
+    <width>739</width>
+    <height>434</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -67,7 +67,7 @@
           </font>
          </property>
          <property name="text">
-          <string>修改用户密码</string>
+          <string>删除设备</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -140,12 +140,12 @@
           </font>
          </property>
          <property name="text">
-          <string>用户名：</string>
+          <string>设备名：</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="Username">
+        <widget class="QLineEdit" name="Devicename">
          <property name="minimumSize">
           <size>
            <width>330</width>
@@ -221,12 +221,12 @@
           </font>
          </property>
          <property name="text">
-          <string>新密码：</string>
+          <string>型号：</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="Newpassword">
+        <widget class="QLineEdit" name="DeviceType">
          <property name="minimumSize">
           <size>
            <width>330</width>
@@ -265,85 +265,7 @@
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <item>
-        <spacer name="horizontalSpacer_6">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_4">
-         <property name="minimumSize">
-          <size>
-           <width>80</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>80</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>微软雅黑</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>权限：</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="Newrole">
-         <property name="minimumSize">
-          <size>
-           <width>330</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>330</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>微软雅黑</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer_11">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
+      <layout class="QHBoxLayout" name="horizontalLayout_2"/>
      </item>
      <item>
       <spacer name="verticalSpacer">
@@ -361,7 +283,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_5">
        <item>
-        <spacer name="horizontalSpacer_2">
+        <spacer name="horizontalSpacer_10">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -374,7 +296,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="btnChange">
+        <widget class="QPushButton" name="btnDelete">
          <property name="minimumSize">
           <size>
            <width>100</width>
@@ -396,7 +318,7 @@
           </font>
          </property>
          <property name="text">
-          <string>修改</string>
+          <string>删除</string>
          </property>
         </widget>
        </item>

@@ -27,6 +27,8 @@ AdminLayout::AdminLayout(QWidget *parent) :
 
     connect(this,&AdminLayout::display,m_pQStackedLayout,&QStackedLayout::setCurrentIndex);//跳转到想要的界面
     connect(this,&AdminLayout::display,m_padminGetUserAll,&adminGetUserAll::onGetUserAll);
+    connect(this,&AdminLayout::getSerial,m_padminDeviceError,&adminDeviceError::getSerial);
+    connect(this,&AdminLayout::getSerial,m_padminDataMessage,&adminDataMessage::getSerial);
 }
 
 AdminLayout::~AdminLayout()

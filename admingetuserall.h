@@ -2,7 +2,6 @@
 #define ADMINGETUSERALL_H
 
 #include <QWidget>
-#include <QMessageBox>
 #include "databasemessage.h"
 
 namespace Ui {
@@ -22,6 +21,8 @@ public slots:
 
 private:
     Ui::adminGetUserAll *ui;
+    DatabaseMessage *dbMessage;
+
 };
 
 #endif // ADMINGETUSERALL_H

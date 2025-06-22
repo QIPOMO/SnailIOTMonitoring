@@ -15,23 +15,20 @@ AdminMessage::AdminMessage(QWidget *parent) :
     connect(ui->btnDeviceMassage,&QPushButton::clicked,this,[=](){
         emit display(2);
     });
-    connect(ui->btnChagePassword,&QPushButton::clicked,this,[=](){
+    connect(ui->btnError,&QPushButton::clicked,this,[=](){
         emit display(3);
     });
-    connect(ui->btnError,&QPushButton::clicked,this,[=](){
+    connect(ui->btnDataMessage,&QPushButton::clicked,this,[=](){
         emit display(4);
     });
-    connect(ui->btnDataMessage,&QPushButton::clicked,this,[=](){
+    connect(ui->btnDataAnalysis,&QPushButton::clicked,this,[=](){
         emit display(5);
     });
-    connect(ui->btnDataAnalysis,&QPushButton::clicked,this,[=](){
+    connect(ui->btnDeleteUser,&QPushButton::clicked,this,[=](){
         emit display(6);
     });
-    connect(ui->btnDeleteUser,&QPushButton::clicked,this,[=](){
-        emit display(7);
-    });
     connect(ui->btnLoginMessage,&QPushButton::clicked,this,[=](){
-        emit display(8);
+        emit display(7);
     });
 
     connect(ui->btnclose,&QPushButton::clicked,this,&AdminMessage::displayclose);

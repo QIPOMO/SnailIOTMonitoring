@@ -2,7 +2,6 @@
 #define GETUSERALL_H
 
 #include <QWidget>
-#include <QMessageBox>
 #include "databasemessage.h"
 
 namespace Ui {
@@ -22,7 +21,7 @@ public slots:
 
 private:
     Ui::getUserAll *ui;
-
+    DatabaseMessage *m_dbMessage;
 };
 
 #endif // GETUSERALL_H

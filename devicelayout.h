@@ -6,6 +6,7 @@
 #include "databasedevice.h"
 #include "devicemanageruser.h"
 #include "adddevice.h"
+#include "admindeletedevice.h"
 
 namespace Ui {
 class DeviceLayout;
@@ -21,12 +22,14 @@ public:
 
 signals:
     void display(int);
+    void Device();
 
 private:
     Ui::DeviceLayout *ui;
     QStackedLayout *m_pQStackedLayout;
     deviceManagerUser *m_pdeviceManagerUser;
     AddDevice *m_pAddDevice;
+    adminDeleteDevice *m_padminDeleteDevice;
 
 };
 

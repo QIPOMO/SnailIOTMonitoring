@@ -10,14 +10,16 @@ DeviceLayout::DeviceLayout(QWidget *parent) :
 
     m_pdeviceManagerUser = new deviceManagerUser;
     m_pAddDevice = new AddDevice;
+    m_padminDeleteDevice = new adminDeleteDevice;
+
     m_pQStackedLayout->addWidget(m_pdeviceManagerUser);
     m_pQStackedLayout->addWidget(m_pAddDevice);
+    m_pQStackedLayout->addWidget(m_padminDeleteDevice);
 
     connect(this,&DeviceLayout::display,m_pQStackedLayout,&QStackedLayout::setCurrentIndex);
-
+    connect(this,&DeviceLayout::Device,m_pdeviceManagerUser,&deviceManagerUser::onSeeDevice);
 }
 
-DeviceLayout::~DeviceLayout()
-{
+DeviceLayout::~DeviceLayout() {
     delete ui;
 }

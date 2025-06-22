@@ -15,6 +15,7 @@ User::User(QWidget *parent) :
     ui->UserLayout->addWidget(m_pUserLayout);
 
     connect(m_pUserMessage,&UserMessage::display,m_pUserLayout,&UserLayout::display);
+    connect(m_pUserMessage,&UserMessage::Device,m_pUserLayout,&UserLayout::Device);
     connect(m_pUserMessage,&UserMessage::displayclose,this,&User::displayclose);
 
     connect(this,&User::LoginName,m_pUserLayout,&UserLayout::Loginame);

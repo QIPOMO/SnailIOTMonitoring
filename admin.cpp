@@ -17,6 +17,7 @@ Admin::Admin(QWidget *parent) :
 
     connect(m_pAdminMessage,&AdminMessage::displayclose,this,&Admin::displayclose);
     connect(m_pAdminMessage,&AdminMessage::display,m_pAdminLayout,&AdminLayout::display);
+    connect(this,&Admin::getSerial,m_pAdminLayout,&AdminLayout::getSerial);
 
 }
 

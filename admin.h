@@ -23,6 +23,7 @@ public:
 signals:
     void display(int);
     void displayclose(int);
+    void getSerial(const QByteArray &data);
 
 private:
     Ui::Admin *ui;

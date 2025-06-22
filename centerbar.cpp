@@ -28,6 +28,7 @@ Centerbar::Centerbar(QWidget *parent) :
     connect(m_pAdmin,&Admin::displayclose,m_pQStackedLayout,&QStackedLayout::setCurrentIndex);
 
     connect(m_pLogin,&Login::disName,m_pUser,&User::LoginName);
+    connect(this,&Centerbar::getSerial,m_pAdmin,&Admin::getSerial);
 
 }
 

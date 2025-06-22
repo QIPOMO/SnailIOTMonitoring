@@ -24,7 +24,7 @@ public slots:
 
 private:
     Ui::changeUser *ui;
-
+    DatabaseMessage *m_dbMessage;
 };
 
 #endif // CHANGEUSER_H
